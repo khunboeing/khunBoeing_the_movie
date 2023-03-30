@@ -4,13 +4,13 @@ import SearchIcon from "@mui/icons-material/Search";
 
 const Nav = () => {
   return (
-    <div className="flex justify-between px-6 py-6 items-center">
+    <div className="flex justify-between px-6 py-6 items-center absolute top-0 z-10 w-full">
       <div className="text-white text-2xl">Boeing Movies</div>
       <div className="w-1/3">
         <Input
           endDecorator={<SearchIcon />}
           variant="outlined"
-          className="opacity-20"
+          className=""
           placeholder="Search"
         />
       </div>
