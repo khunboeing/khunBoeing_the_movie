@@ -3,6 +3,7 @@ import Nav from "../Components/Nav";
 import CardMovie from "../Components/CardMovie";
 import RecommentMovie from "../Components/RecommentMovie";
 import axios from "axios";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   const [dataMovies, setDataMovies] = useState(null);
@@ -56,6 +57,7 @@ const Home = () => {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

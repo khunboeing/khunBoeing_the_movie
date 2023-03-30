@@ -15,7 +15,6 @@ const CardMovie = (props) => {
   return (
     <div
       className="bg-gradient-to-r from-indigo-500  w-[300px] h-[380px] rounded-lg hover:shadow-slate-100/40 hover:shadow-2xl hover:scale-110 transition delay-200 duration-300 ease-in-out hover:cursor-pointer relative "
-      // onClick={() => handleOverview()}
       onMouseOver={() => handleOnMouseOver()}
       onMouseLeave={() => handleOnMouseLeave()}
     >
