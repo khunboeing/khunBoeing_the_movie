@@ -6,6 +6,8 @@ import axios from "axios";
 
 const Home = () => {
   const [dataMovies, setDataMovies] = useState(null);
+  const [searchMovie, setSearchMovie] = useState("");
+  console.log(searchMovie);
 
   useEffect(() => {
     (async () => {
@@ -15,6 +17,12 @@ const Home = () => {
     })();
   }, []);
 
+  const handleSearch = async () => {
+    const moviesSearch = await fireSearchMovie(searchMovie);
+    console.log(moviesSearch);
+    setDataMovies(moviesSearch.data);
+  };
+
   const fireMovieApi = async () => {
     const movieData = await axios.get(
       "https://api.themoviedb.org/3/trending/all/week?api_key=229a6a0f891df5bf1176a4668af885c6"
@@ -22,10 +30,20 @@ const Home = () => {
 
     return movieData;
   };
+  const fireSearchMovie = async (nameMovie) => {
+    const movieData = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=229a6a0f891df5bf1176a4668af885c6&language=en-US&query=${nameMovie}&page=1&include_adult= true`
+    );
+    return movieData;
+  };
 
   return (
     <div className="relative">
-      <Nav />
+      <Nav
+        searchMovie={searchMovie}
+        setSearchMovie={setSearchMovie}
+        handleSearch={handleSearch}
+      />
       <RecommentMovie dataMovies={dataMovies?.results} />
       <div className="flex justify-center">
         <div className="grid grid-cols-1 grid-flow-rows gap-7 md:grid-col-2 lg:grid-cols-3 xl:grid-cols-4 ">
