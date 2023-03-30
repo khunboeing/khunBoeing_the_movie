@@ -7,7 +7,7 @@ const Nav = (props) => {
 
   return (
     <div className="flex justify-between px-6 py-6 items-center absolute top-0 z-10 w-full">
-      <div className="text-red-500 text-xl">Boeing Movies</div>
+      <div className="text-red-500 text-xl font-semibold">Boeing Movies</div>
       <div className="w-1/3">
         <Input
           endDecorator={
