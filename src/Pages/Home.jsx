@@ -25,14 +25,18 @@ const Home = () => {
 
   const fireMovieApi = async () => {
     const movieData = await axios.get(
-      "https://api.themoviedb.org/3/trending/all/week?api_key=229a6a0f891df5bf1176a4668af885c6"
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${
+        import.meta.env.VITE_API_KEY
+      }`
     );
 
     return movieData;
   };
   const fireSearchMovie = async (nameMovie) => {
     const movieData = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=229a6a0f891df5bf1176a4668af885c6&language=en-US&query=${nameMovie}&page=1&include_adult= true`
+      `https://api.themoviedb.org/3/search/movie?api_key=${
+        import.meta.env.VITE_API_KEY
+      }&language=en-US&query=${nameMovie}&page=1&include_adult= true`
     );
     return movieData;
   };
